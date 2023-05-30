@@ -259,18 +259,41 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/hero/office-mobi@1x428.jpg);
+    url(../images/hero/office-mobi@1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/hero/office-mobi@2x.jpg);
+  }
+}
+
 @media only screen and (min-width: 429px) {
   .hero-section {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/hero/office-tab@1x768.jpg);
+      url(../images/hero/office-tab@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/office-tab@2x.jpg);
+    }
   }
 }
 @media only screen and (min-width: 769px) {
@@ -279,7 +302,18 @@ img {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url(../images/hero/office-desc@1x1440.jpg);
+      url(../images/hero/office-desc@1x.jpg);
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/hero/office-desc@2x.jpg);
+    }
   }
 }
 
@@ -606,16 +640,46 @@ img {
 
 .container-media {
   display: flex;
+  flex-wrap: wrap;
+  gap: 72px 24px;
   align-items: baseline;
+}
+@media only screen and (min-width: 768px) {
+  .container-media {
+    width: 552px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container-media {
+    width: 1128px;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
 }
 
 .footer {
-  /* padding: 100px 0; */
   background-color: var(--color-navy-blue);
+}
+@media only screen and (min-width: 1200px) {
+  .footer {
+    padding: 100px 0;
+  }
 }
 
 .logo-p {
-  margin-right: 120px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .logo-p {
+    margin: 0;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .logo-p {
+    margin-right: 120px;
+  }
 }
 
 .logo {
@@ -640,6 +704,7 @@ img {
   color: var(--color-cloud);
 }
 .text-footer {
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   max-width: 264px;
@@ -650,7 +715,19 @@ img {
 /* Social media */
 
 .social-footer {
-  margin-right: 80px;
+  margin: 0 auto;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .social-footer {
+    margin: 0;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .social-footer {
+    margin-right: 80px;
+  }
 }
 
 .media {
@@ -693,28 +770,35 @@ img {
 }
 
 .subscribe-text {
+  text-align: center;
   margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
 }
+@media only screen and (min-width: 1200px) {
+  .subscribe-text {
+    text-align: left;
+  }
+}
 
 .footer-form {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 24px;
 }
-
-.form {
-}
-
-.subscribe-form {
+@media only screen and (min-width: 1200px) {
+  .footer-form {
+    flex-wrap: nowrap;
+  }
 }
 
 .subscribe-form-input {
-  width: 264px;
+  width: 398px;
+
   height: 40px;
   color: var(--color-white);
   background-color: var(--color-grey);
@@ -725,6 +809,11 @@ img {
 
   outline: transparent;
   outline-offset: -1px;
+}
+@media only screen and (min-width: 768px) {
+  .subscribe-form-input {
+    width: 264px;
+  }
 }
 
 .subscribe-form-input:focus {
@@ -1340,8 +1429,8 @@ img {
   align-items: center;
   justify-content: center;
 
-  width: 24px;
-  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   padding: 0;
 
   cursor: pointer;
